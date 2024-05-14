@@ -1,0 +1,35 @@
+﻿@model List<Rent.Models.Apartment>
+
+@{
+    ViewData["Title"] = "List of Apartments";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a shared layout
+}
+
+<h1>List of Apartments</h1>
+
+<div class="row">
+    @foreach (var apartment in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                @if (apartment.Photo != null)
+                {
+                    <img src="data:image;base64,@Convert.ToBase64String(apartment.Photo)" class="card-img-top" alt="Apartment Image">
+                }
+                else
+                {
+                    <div class="card-img-top no-image">No Image Available</div>
+                }
+                <div class="card-body">
+                    <h5 class="card-title">Apartment ID: @apartment.ApartmentId</h5>
+                    <p class="card-text">Bedrooms: @apartment.Bedrooms</p>
+                    <p class="card-text">Bathrooms: @apartment.Bathrooms</p>
+                    <p class="card-text">Rent Price: @apartment.RentPrice</p>
+                  
+                    <a href="@Url.Action("Details", new { id = apartment.ApartmentId })" class="btn btn-primary">Details</a>
+                   
+                </div>
+            </div>
+        </div>
+    }
+</div>

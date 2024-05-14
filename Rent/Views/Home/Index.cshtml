@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        /* Reset and General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Text Styles */
+        .text-center {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .display-4 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Link Styles */
+        .link {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .link:hover {
+                background-color: white;
+                color: #007bff; /* Change link color on hover */
+            }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+            footer p {
+                margin: 0;
+            }
+
+        /* Image Styles */
+        .image-container {
+            text-align: center; /* Center the image */
+            margin-top: 20px; /* Add space between content and image */
+        }
+
+            .image-container img {
+                max-width: 100%; /* Make sure image doesn't overflow container */
+                height: auto; /* Maintain aspect ratio */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4">Property Rental Management System</h1>
+            <p>Welcome to the Property Rental Management System. Here, you can manage your properties, tenants, and more.</p>
+        </div>
+    </div>
+    <!-- Add your image here -->
+    <div class="image-container">
+        <img src="~/images/apartments/image.jpg" alt="Description of the image">
+    </div>
+
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; @DateTime.Now.Year Preet Manandhar</p>
+    </footer>
+</body>
+</html>

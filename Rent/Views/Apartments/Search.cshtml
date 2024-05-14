@@ -1,0 +1,48 @@
+﻿@model List<Rent.Models.Apartment>
+@{
+    ViewData["Title"] = "Apartment List on your Rate range";
+}
+
+<h1>Search Results</h1>
+
+<div class="result-box">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Apartment Id</th>
+                    <th>Bed rooms</th>
+                    <th>Bath rooms</th>
+                    <th>Rent Price</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var apartment in Model)
+                {
+                    <tr>
+                        <td>@apartment.ApartmentId</td>
+                        <td>@apartment.Bedrooms</td> <!-- Adjust property name accordingly -->
+                        <td>@apartment.Bathrooms</td>
+                        <td>@apartment.RentPrice</td>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No apartments found matching the search criteria.</p>
+    }
+</div>
+<style>
+    .result-box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+</style>

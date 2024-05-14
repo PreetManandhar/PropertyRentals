@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "Manager Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .col-md-6 {
+            width: calc(50% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: #007bff;
+        }
+
+        .card-text {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <h1 class="text-center mt-5">Welcome to the Manager Dashboard</h1>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Properties Management</h2>
+                        <p class="card-text">Perform CRUD operations related to properties.</p>
+                        <a href="https://localhost:7038/Properties/Index" class="btn btn-primary">Manage Properties</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Apartments Management</h2>
+                        <p class="card-text">Perform CRUD operations related to apartments.</p>
+                        <a href="https://localhost:7038/Apartments/Index" class="btn btn-primary">Manage Apartments</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Apartment Status Tracking</h2>
+                        <p class="card-text">Keep track of apartments status.</p>
+                        <a href="https://localhost:7038/StatusModels/Index" class="btn btn-primary">Track Status</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Schedule Tenant Appointments</h2>
+                        <p class="card-text">Schedule potential tenants' appointments.</p>
+                        <a href="https://localhost:7038/Appointments/Create" class="btn btn-primary">Schedule Appointments</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Respond to Messages</h2>
+                        <p class="card-text">Respond to potential tenants' messages.</p>
+                        <a href="https://localhost:7038/Messages/Index" class="btn btn-primary">Respond to Messages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

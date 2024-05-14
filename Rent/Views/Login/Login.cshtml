@@ -1,0 +1,143 @@
+﻿@model Rent.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* Styles for the Login page */
+
+        /* Center the login form */
+        .row.justify-content-center {
+            margin-top: 50px;
+        }
+
+        /* Style the card */
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the card body */
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Style the card title */
+        .card-title {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Style the form inputs */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Style the form labels */
+        .control-label {
+            font-weight: bold;
+        }
+
+        /* Style the form inputs */
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Style the form buttons */
+        .btn-primary {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style the validation messages */
+        .text-danger {
+            color: #dc3545;
+            font-size: 14px;
+        }
+
+        .text-success {
+            color: #28a745;
+            font-size: 14px;
+        }
+
+        /* Style the link */
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">User Account</h4>
+                    <hr />
+                    @if (ViewBag.Message != null)
+                    {
+                        <p class="text-danger">@ViewBag.Message</p>
+                    }
+                    @if (TempData["Success"] != null)
+                    {
+                        <p class="text-success">@TempData["Success"]</p>
+                    }
+                    <form asp-action="Login">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                    <p>
+                        <a asp-controller="Register" asp-action="Register">Not registered yet? Click here to Register.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

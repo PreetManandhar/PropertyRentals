@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Rent.Models.Property>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                @if (item.Photo != null)
+                {
+                    <img src="data:image;base64,@Convert.ToBase64String(item.Photo)" class="card-img-top" alt="Property Image">
+                }
+                else
+                {
+                    <div class="card-img-top no-image">No Image Available</div>
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@item.Description</h5>
+                    <p class="card-text">Address: @item.Address, @item.City, @item.PostalCode</p>
+                    <p class="card-text">Manager: @item.Manager.Email</p>
+                    <p class="card-text">Owner: @item.Owner.Email</p>
+                    <a href="@Url.Action("Details", new { id = item.PropertyId })" class="btn btn-primary">Details</a>
+                    <a href="@Url.Action("Edit", new { id = item.PropertyId })" class="btn btn-secondary">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = item.PropertyId })" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
